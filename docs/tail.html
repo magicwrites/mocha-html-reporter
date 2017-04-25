@@ -24,6 +24,16 @@
       }
     }
   })();
+
+  // count leafs to be done
+
+  var ul = document.getElementById("stats");
+  var li = document.createElement("li");
+
+  li.className = 'inactive';
+
+  li.appendChild(document.createTextNode("inactive: " + leafsRemaning));
+  ul.appendChild(li);
 </script>
 </body>
 </html>
