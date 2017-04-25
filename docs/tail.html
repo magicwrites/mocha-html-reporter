@@ -16,11 +16,13 @@
     // mark empty uls
 
     var allLists = document.getElementsByTagName('ul');
+    var leafsRemaning = 0;
 
     for(var i=0;i<allLists.length;i++){
       if(allLists[i].getElementsByTagName('*').length == 0){
         allLists[i].className = 'empty';
         getSiblings(allLists[i])[0].className = 'leaf';
+        leafsRemaning++;
       }
     }
   })();
