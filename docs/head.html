@@ -2,18 +2,80 @@
   <head>
     <title>Mocha</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="node_modules/mocha/mocha.css" />
-<style type="text/css">
-#mocha .test:hover h2:after {
-    color: #888888;
-    content: "(view source)";
-    font-family: arial;
-    font-size: 12px;
-    position: relative;
-    right: -10px;
-    top: 0;
-}
-</style>
+
+    <style type="text/css">
+      body {
+        background: black;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        color: #ccc;
+        font-family: monospace;
+        font-weight: normal;
+        font-size: 10pt;
+        line-height: 11pt;
+      }
+
+      ul, ol {
+        list-style: none;
+        margin-top: 5px;
+        padding-left: 20px;
+      }
+
+      ul:empty,
+      ul:blank {
+        display: none;
+      }
+
+      h2:before {
+        content: '√ ';
+      }
+
+      .leaf {
+        color: #666;
+      }
+
+      .test {
+        pointer-events: none;
+      }
+
+      .test.pass {
+        margin-bottom: 5px;
+      }
+
+      .test .duration:before {
+        content: ' ';
+      }
+
+      .test.pass *,
+      .passes {
+        color: #090;
+      }
+
+      .failures {
+        color: #900;
+      }
+
+      .duration {
+        color: #666 !important;
+      }
+
+      .progress,
+      .test.pass pre {
+        display: none;
+      }
+
+      #stats {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      #mocha {
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <div id="mocha">

@@ -1,10 +1,30 @@
 </div>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script>
-$("h2").click(function() {
-       var display = 'none' == $(this).next("pre").css('display')? 'block': 'none'; 
-	$(this).next("pre").css('display', display);
-});
+
+  function getChildren(n, skipMe){
+      var r = [];
+      for ( ; n; n = n.nextSibling )
+         if ( n.nodeType == 1 && n != skipMe)
+            r.push( n );
+      return r;
+  };
+
+  function getSiblings(n) {
+      return getChildren(n.parentNode.firstChild, n);
+  }
+
+  (function() {
+    // mark empty uls
+
+    var allLists = document.getElementsByTagName('ul');
+
+    for(var i=0;i<allLists.length;i++){
+      if(allLists[i].getElementsByTagName('*').length == 0){
+        allLists[i].className = 'empty';
+        getSiblings(allLists[i])[0].className = 'leaf';
+      }
+    }
+  })();
 </script>
 </body>
 </html>
